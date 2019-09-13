@@ -15,11 +15,6 @@
 15. fibonacci(a)
 14. prime(a)
 
-# arrays
-13. repeated()
-12. howMany()
-11. list()
-
 # approximations
 10 sen x	 = x - x^3/3! + x^5/5! - x^7/7! + ...
 9. cos x	 = 1 - x^2/2! + x^4/4! - x^6/6! + ...
