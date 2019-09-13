@@ -3,17 +3,6 @@
 
 # binomial reusing
 21. n!
-20. P(n,r) = n! / (n-r)!
-19. C(n,r)  = P(n,r) / r!  
-18. catalan(n)
-= (2n
-    r ) / (n+1)
-
-# O(f(n))
-17. gcd(a,c)
-16. lcm(a,c)
-15. fibonacci(a)
-14. prime(a)
 
 # approximations
 10 sen x	 = x - x^3/3! + x^5/5! - x^7/7! + ...
