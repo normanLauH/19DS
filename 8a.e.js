@@ -1,5 +1,5 @@
 function factorial(f) {
-    var fact = 1;
+    let fact = 1;
     for(f; f > 0; f--){
         fact *= f;
     }
@@ -7,9 +7,11 @@ function factorial(f) {
 }
 
 function euler(x) {
-    var sum = 0;
-    for(var i=0; i<=x; i++){
+    let sum = 0;
+    for(let i=0; i<=x; i++){
         sum += (1/factorial(i))
     }
     return sum;
 }
+
+console.log(euler(7));

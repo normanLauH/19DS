@@ -1,5 +1,5 @@
 function factorial(f) {
-    var fact = 1;
+    let fact = 1;
     for(f; f > 0; f--){
         fact *= f;
     }
@@ -7,10 +7,10 @@ function factorial(f) {
 }
 
 function sen(x) {
-    var signo = true;
+    let signo = true;
     sum = 0;
 
-    for(i=1; i<=x; i+=2){
+    for(let i=1; i<=x; i+=2){
         if(signo===true){
             sum += ((Math.pow(x,i)) / factorial(i));
             signo = false
@@ -20,5 +20,7 @@ function sen(x) {
             signo = true;
         }
     }
-    return sen;
+    return (sum);
 }
+
+console.log(sen(8));
