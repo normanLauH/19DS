@@ -26,3 +26,5 @@ function primes(n){
     }
     return(store);
 }
+
+console.log(primes(7));

@@ -11,3 +11,5 @@ let lcm = (n, m) => {
   
   return i;
 }
+
+console.log(lcm(4,7));

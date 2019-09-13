@@ -13,3 +13,5 @@ function gcd(n, m) {
     }
     return n;
 }
+
+console.log(gcd(32, 14))

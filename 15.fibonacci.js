@@ -14,3 +14,5 @@ function fib(n){
   
     return store;
 }
+
+console.log(fib(7));
