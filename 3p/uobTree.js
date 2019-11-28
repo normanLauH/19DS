@@ -1,5 +1,4 @@
-// ubbTree Class//unsorted, binary, balanced
-
+// uobTree Class//unbalanced, ordered, binary
 
 class Node {
     constructor(data) {
@@ -9,27 +8,23 @@ class Node {
     }
   }
   
-  class UBBTree {
+  class UOBTree {
     constructor(node) {
       this.root = node;
     }
   
     insert(n, node = this.root) {
-      if (!node.left) {
-        node.left = n;
-        return node;
-      } else if (!node.right) {
-        node.right = n;
-        return node;
-      } else if (node.right && !node.left.right) {
-        return this.insert(n, node.left);
-      } else if (node.left && !node.right.left) {
-        return this.insert(n, node.right);
-      } else if (node.right && !node.right.right) {
-        return this.insert(n, node.right);
-      } else {
-        return this.insert(n, node.left);
-      }
+        if (n.data < node.data && node.left === null) {
+          node.left = n;
+          return node;
+        } else if (n.data > node.data && node.right === null) {
+          node.right = n;
+          return node;
+        } else if (n.data < node.data && node.left) {
+          return this.insert(n, node.left);
+        } else if (n.data > node.data && node.right) {
+          return this.insert(n, node.right);
+        }
     }
   
     remove(key, node = this.root) {
@@ -42,19 +37,15 @@ class Node {
       } else if (node.right.data === key) {
         node.right = null;
         return node;
-      } else if (node.right && !node.left.right) {
-        return this.remove(key, node.left);
-      } else if (node.left && !node.right.left) {
-        return this.remove(key, node.right);
-      } else if (node.right && !node.right.right) {
-        return this.remove(key, node.right);
-      } else {
-        return this.remove(key, node.left);
+      } else if (key < node.data && node.left) {
+        return this.remove(n, node.left);
+      } else if (key > node.data && node.right) {
+        return this.remove(n, node.right);
       }
     }
   
     bft() {
-      let root = this.root;
+      let root = this.root
       let tempArr = [];
       let print = [];
   
@@ -102,7 +93,7 @@ let node7 = new Node('7');
 let node8 = new Node('8');
 let node9 = new Node('9');
 
-let tree = new UBBTree(root);
+let tree = new UOBTree(root);
 
 tree.insert(node1);
 tree.insert(node2);
