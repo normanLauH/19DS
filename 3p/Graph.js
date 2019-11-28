@@ -110,6 +110,16 @@ class Graph {
       return false;
     }
   }
+
+  isIsomorphic(g) {
+    for(let i = 0; i < this.data.length; i++) {
+      for(let l = 0; l < this.data.length; l++) {
+          if(this.data[i][l] != g.data[i][l])
+              return false;
+      }
+    }
+    return true;
+  }
 }
 
 let grafo1 = new Graph(4);
@@ -129,3 +139,15 @@ grafo2.addEdege(1,3,true);
 grafo2.addEdege(2,3,true);
 console.log(grafo2.printGraph());
 console.log(grafo2.isDirected());
+
+console.log("Isomorphic: " + grafo1.isIsomorphic(grafo2));
+
+let grafo3 = new Graph(2);
+grafo3.addEdege(0,1,true);
+console.log(grafo3.data);
+
+let grafo4 = new Graph(2);
+grafo4.addEdege(0,1,true);
+console.log(grafo4.data);
+
+console.log("Isomorphic: " + grafo3.isIsomorphic(grafo4));
