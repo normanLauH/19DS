@@ -75,15 +75,21 @@ class Node {
   
       return print;
     }
+
+    inOrder(node = this.root) {
+      if (node.left) {
+        this.inOrder(node.left);
+      }
+
+      console.log(node.data);
   
-    inOrder(node) {
-      if(node.left) inOrder(node.left);
-        console.log(node.data);
-      if(node.right) inOrder(node.right);
+      if (node.right) {
+        this.inOrder(node.right);
+      }
     }
 }
 
-let root = new Node('root');
+let root = new Node('0');
 
 let node1 = new Node('1');
 let node2 = new Node('2');
@@ -113,3 +119,4 @@ tree.bft();
 
 console.log(tree);
 
+tree.inOrder();
