@@ -95,6 +95,7 @@ class Matrix {
                 }
             }
         }
+        return true;
     }
 
     getMatrix() {
