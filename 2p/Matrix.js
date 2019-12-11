@@ -29,6 +29,19 @@ class Matrix {
         return this.data;
     }
 
+    initIdentity() {
+        if (!this.isSquared()){
+            return "La matriz debe de ser cuadrada";
+        }else {
+            for(let r = 0; r < this.rows; r++) {
+                for(let c = 0; c < this.columns; c++) {
+                    (r == c) ? this.data[r][c] = 1 : this.data[r][c] = 0;
+                }
+            }
+        }
+        return this.data;
+    }
+
     getRow(r) {
         if(this.rows <= r || r < 0) {
             return 'No existe esa fila';
@@ -98,15 +111,7 @@ class Matrix {
 (function useMatrix() {
     let mx = new Matrix(3,3);
 
-    console.log("Matriz:")
+    console.log("Identity: " + mx.initIdentity());
     console.log(mx);
-    console.log("Random: " + mx.initRandom());
-    console.log("Fila: " + mx.getRow(2));
-    console.log("Columna: " + mx.getColumn(2));
-    console.log("Cuadrada: " + mx.isSquared());
-    console.log("Simetrica: " + mx.isSymetric());
     console.log("Identidad: " + mx.isIdentity());
-    let mx2 = mx.getMatrix();
-    console.log("Nueva Matriz:")
-    console.log(mx2);
 })()
