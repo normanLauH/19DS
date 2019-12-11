@@ -111,8 +111,10 @@ class Matrix {
 
 (function useMatrix() {
     let mx = new Matrix(3,3);
-
     console.log("Identity: " + mx.initIdentity());
+    console.log(mx);
+    console.log("Identidad: " + mx.isIdentity());
+    mx.initRandom();
     console.log(mx);
     console.log("Identidad: " + mx.isIdentity());
 })()
